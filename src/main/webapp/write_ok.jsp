@@ -1,20 +1,19 @@
-<%--
-<%@ page language="java" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ page import="com.example.jsp_crud_db.dao.BoardDAO"%>
-
-<% request.setCharacterEncoding("utf-8"); %>
-
-<jsp:useBean id="u" class="com.example.jsp_crud_db.dao.BoardDAO" />
-<jsp:setProperty property="*" name="u"/>
-
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ include file="top.jsp" %>
 <%
-    BoardDAO boardDAO = new BoardDAO();
-    int i = boardDAO.insertBoard(u);
-    String msg = "데이터 추가 성공 !";
-    if (i == 0) msg = "[에러] 데이터 추가 ";
-%>
+    com.example.jsp_crud_db.dao.BoardDAO dao = new com.example.jsp_crud_db.dao.BoardDAO();
+    com.example.jsp_crud_db.bean.BoardVO post = new com.example.jsp_crud_db.bean.BoardVO();
 
-<script>
-    alert('<%=msg%>');
-    location.href='list.jsp';
-</script>--%>
+    post.setTitle(request.getParameter("title"));
+    post.setWriter(request.getParameter("writer"));
+    post.setContent(request.getParameter("content"));
+
+    int result = dao.insertBoard(post);
+    if (result > 0) {
+        System.out.println("<h3>Post added!</h3>");
+    } else {
+        System.out.println("<h3>Post not added!</h3>");
+    }
+%>
+<a href="list.jsp">Back to List</a>
+<%@ include file="bottom.jsp" %>

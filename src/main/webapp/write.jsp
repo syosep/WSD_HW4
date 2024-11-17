@@ -5,7 +5,7 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <h1>Add New Post</h1>
-<form action="addpost.jsp" method="post">
+<form action="write_ok.jsp" method="post">
     <table>
         <tr>
             <td>Title:</td>

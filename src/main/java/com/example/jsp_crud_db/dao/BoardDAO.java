@@ -113,9 +113,10 @@ public class BoardDAO {
 
     public int deleteBoard(int seq) {
         int result = 0;
+        String sql = "DELETE FROM board WHERE seq = ?";
         try {
             conn = JDBCUtil.getConnection();
-            stmt = conn.prepareStatement("DELETE FROM board WHERE seq = ?");
+            stmt = conn.prepareStatement(sql);
             stmt.setInt(1, seq);
             result = stmt.executeUpdate();
         } catch (Exception e) {

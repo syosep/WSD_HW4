@@ -1,5 +1,4 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%@ include file="top.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,10 +6,16 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-<h1>Database Management Program</h1>
-<br/>
-<a href="list.jsp">View Post</a>
-<a href="write.jsp">Write Post</a>
+<%@ include file="top.jsp" %>
+
+<div class="container">
+    <div class="card">
+        <h2>Welcome to Post Management!</h2>
+        <a href="list.jsp" class="button">View Posts</a>
+        <a href="write.jsp" class="button">Write a New Post</a>
+    </div>
+</div>
+
 <%@ include file="bottom.jsp" %>
 </body>
 </html>

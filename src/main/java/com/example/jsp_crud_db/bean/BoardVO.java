@@ -58,6 +58,10 @@ public class BoardVO {
         this.regdate = regdate;
     }
 
+    public BoardVO() {
+
+    }
+
     public BoardVO(String title, String writer, String content) {
         this.title = title;
         this.writer = writer;

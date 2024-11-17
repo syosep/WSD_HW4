@@ -1,5 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%--<%@ include file="top.jsp" %>--%>
+<%@ include file="top.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,6 +10,6 @@
 <br/>
 <a href="list.jsp">View Post</a>
 <a href="write.jsp">Write Post</a>
+<%@ include file="bottom.jsp" %>
 </body>
-<%--<%@ include file="bottom.jsp" %>--%>
 </html>

@@ -1,16 +1,19 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: sim-yosep
-  Date: 2024. 11. 15.
-  Time: 오전 10:54
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head>
-    <title>Title</title>
-</head>
-<body>
+<%@ include file="top.jsp" %>
+<%
+    com.example.jsp_crud_db.dao.BoardDAO dao = new com.example.jsp_crud_db.dao.BoardDAO();
+    com.example.jsp_crud_db.bean.BoardVO post = new com.example.jsp_crud_db.bean.BoardVO();
 
-</body>
-</html>
+    post.setTitle(request.getParameter("title"));
+    post.setWriter(request.getParameter("writer"));
+    post.setContent(request.getParameter("content"));
+
+    int result = dao.insertBoard(post);
+    if (result > 0) {
+        System.out.println("<h3>Post added!</h3>");
+    } else {
+        System.out.println("<h3>Post not added!</h3>");
+    }
+%>
+<a href="list.jsp">Back to List</a>
+<%@ include file="bottom.jsp" %>

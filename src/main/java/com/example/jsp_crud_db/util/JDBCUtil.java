@@ -2,6 +2,7 @@ package com.example.jsp_crud_db.util;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class JDBCUtil {
@@ -26,6 +27,15 @@ public class JDBCUtil {
             conn.close();
         } catch (SQLException e) {
             throw new RuntimeException(e);
+        }
+    }
+
+    public static void close(PreparedStatement stmt, Connection conn) {
+        try {
+            if (stmt != null) stmt.close();
+            if (conn != null) conn.close();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 

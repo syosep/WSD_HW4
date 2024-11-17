@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="top.jsp" %>
+<head>
+    <title>Add Post</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
 <h1>Add New Post</h1>
 <form action="addpost.jsp" method="post">
     <table>

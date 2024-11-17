@@ -12,5 +12,9 @@
         System.out.println("<h3>Post not deleted!</h3>");
     }
 %>
+<head>
+    <title>Delete Post</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
 <a href="list.jsp">Back to List</a>
 <%@ include file="bottom.jsp" %>

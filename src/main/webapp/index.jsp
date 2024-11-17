@@ -4,6 +4,7 @@
 <html>
 <head>
     <title>Josep Shim</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
 <h1>Database Management Program</h1>

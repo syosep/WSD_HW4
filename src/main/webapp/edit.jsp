@@ -5,6 +5,10 @@
     int seq = Integer.parseInt(request.getParameter("seq"));
     com.example.jsp_crud_db.bean.BoardVO post = dao.getBoard(seq);
 %>
+<head>
+    <title>Edit Post</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
 <h1>Edit Post</h1>
 <form action="edit_ok.jsp" method="post">
     <input type="hidden" name="seq" value="<%= post.getId() %>" />

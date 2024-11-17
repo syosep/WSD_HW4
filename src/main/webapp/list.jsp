@@ -6,6 +6,10 @@
     com.example.jsp_crud_db.dao.BoardDAO dao = new com.example.jsp_crud_db.dao.BoardDAO();
     List<BoardVO> posts = dao.getBoardList();
 %>
+<head>
+    <title>Post List</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
 <h1>Post List</h1>
 <a href="write.jsp">Write a New Post</a>
 <table border="1">

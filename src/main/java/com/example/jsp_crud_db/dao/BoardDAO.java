@@ -68,19 +68,61 @@ public class BoardDAO {
         return boardList;
     }
 
-//    void deleteBoard(BoardVO vo) {
-//
-//    }
-//
-//    int updateBoard(BoardVO vo) {
-//
-//    }
-//
-//    BoardVO getBoard(int seq) {
-//
-//    }
-//
-//    List<BoardVO> getBoardList() {
-//
-//    }
+    public BoardVO getBoard(int seq) {
+        BoardVO board = null;
+        try {
+            conn = JDBCUtil.getConnection();
+            stmt = conn.prepareStatement(board_get);
+            stmt.setInt(1, seq);
+            ResultSet rs = stmt.executeQuery();
+
+            if (rs.next()) {
+                board = new BoardVO();
+                board.setId(rs.getInt("seq"));
+                board.setTitle(rs.getString("title"));
+                board.setWriter(rs.getString("writer"));
+                board.setContent(rs.getString("content"));
+                board.setCnt(rs.getInt("cnt"));
+                board.setRegdate(rs.getTimestamp("regdate"));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            JDBCUtil.close(stmt, conn);
+        }
+        return board;
+    }
+
+    public int updateBoard(BoardVO vo) {
+        int result = 0;
+        try {
+            conn = JDBCUtil.getConnection();
+            stmt = conn.prepareStatement(board_update);
+            stmt.setString(1, vo.getTitle());
+            stmt.setString(2, vo.getWriter());
+            stmt.setString(3, vo.getContent());
+            stmt.setInt(4, vo.getId());
+            result = stmt.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            JDBCUtil.close(stmt, conn);
+        }
+        return result;
+    }
+
+    public int deleteBoard(int seq) {
+        int result = 0;
+        try {
+            conn = JDBCUtil.getConnection();
+            stmt = conn.prepareStatement(board_delete);
+            stmt.setInt(1, seq);
+            result = stmt.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            JDBCUtil.close(stmt, conn);
+        }
+        return result;
+    }
 }

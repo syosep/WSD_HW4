@@ -1,3 +1,4 @@
+<%--
 <%@ page language="java" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="com.example.jsp_crud_db.dao.BoardDAO"%>
 
@@ -16,4 +17,4 @@
 <script>
     alert('<%=msg%>');
     location.href='list.jsp';
-</script>
+</script>--%>

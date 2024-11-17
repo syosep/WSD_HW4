@@ -14,6 +14,7 @@
         <th>Title</th>
         <th>Writer</th>
         <th>Reg Date</th>
+        <th>Actions</th>
     </tr>
     <% for (com.example.jsp_crud_db.bean.BoardVO post : posts) { %>
     <tr>
@@ -21,6 +22,11 @@
         <td><%= post.getTitle() %></td>
         <td><%= post.getWriter() %></td>
         <td><%= post.getRegdate() %></td>
+        <td>
+            <a href="view.jsp?seq=<%= post.getId() %>">View</a> |
+            <a href="edit.jsp?seq=<%= post.getId() %>">Edit</a> |
+            <a href="delete.jsp?seq=<%= post.getId() %>">Delete</a>
+        </td>
     </tr>
     <% } %>
 </table>

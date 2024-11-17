@@ -11,18 +11,19 @@
     <table>
         <tr>
             <td>Title:</td>
-            <td><input type="text" name="title" value="<%= post.getTitle() %>"/></td>
+            <td><input type="text" name="title" value="<%= post.getTitle() %>" /></td>
         </tr>
         <tr>
             <td>Writer:</td>
-            <td><input type="text" name="writer" value="<%= post.getWriter() %>"/></td>
+            <td><input type="text" name="writer" value="<%= post.getWriter() %>" /></td>
         </tr>
         <tr>
             <td>Content:</td>
             <td><textarea cols="50" rows="5" name="content"><%= post.getContent() %></textarea></td>
         </tr>
         <tr>
-            <td colspan="2"><input type="submit" value="Update Post"/></td>
+            <td><a href="list.jsp">Cancel</a></td>
+            <td><input type="submit" value="Update Post" /></td>
         </tr>
     </table>
 </form>

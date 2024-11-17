@@ -28,7 +28,7 @@
         <td><%= post.getRegdate() %></td>
     </tr>
 </table>
-<a href="list.jsp">Back to List</a>
-<a href="edit.jsp?seq=<%= post.getId() %>">Edit</a>
+<a href="list.jsp">Back to List</a> |
+<a href="edit.jsp?seq=<%= post.getId() %>">Edit</a> |
 <a href="delete.jsp?seq=<%= post.getId() %>">Delete</a>
 <%@ include file="bottom.jsp" %>
